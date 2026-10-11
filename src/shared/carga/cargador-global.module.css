@@ -1,0 +1,71 @@
+.fondo {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  padding: 1.5rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-text) 24%, transparent);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  place-items: center;
+}
+
+.contenido {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  width: min(12.5rem, 70vw);
+  aspect-ratio: 1;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 30%, var(--color-surface) 35%, var(--color-surface-muted) 100%);
+  box-shadow: 0 1.25rem 3rem color-mix(in srgb, var(--color-text) 18%, transparent);
+  place-items: center;
+}
+
+.contenido::before,
+.contenido::after {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+
+.contenido::before {
+  inset: -0.7rem;
+  border: 1px solid color-mix(in srgb, var(--color-secondary) 35%, transparent);
+  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
+  animation: pulsarHalo 1800ms ease-in-out infinite;
+}
+
+.contenido::after {
+  inset: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-secondary) 18%, transparent);
+}
+
+.animacion {
+  display: grid;
+  width: 72%;
+  aspect-ratio: 1;
+  place-items: center;
+}
+
+@keyframes pulsarHalo {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contenido::before {
+    animation: none;
+  }
+}

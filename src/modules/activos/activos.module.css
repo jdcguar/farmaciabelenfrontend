@@ -1,0 +1,5 @@
+/* Composición de los mismos estilos usados por Productos, empleados y documentos. */
+.completa { grid-column: 1 / -1; min-width: 0; }
+.contenidoSeccion { composes: contenidoFormulario from '../../shared/components/gestion-modulo/formulario-modulo.module.css'; clear: both; }
+.pdf { composes: botonHerramienta from '../catalogos-farmacia/catalogos.module.css'; }
+.iconoPdf { composes: iconoDescarga from '../../shared/components/boton-exportar/boton-exportar.module.css'; }

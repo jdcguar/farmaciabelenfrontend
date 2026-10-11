@@ -1,0 +1,46 @@
+.modulo { min-width: 0; }
+.modulo small { font-size: 0.75rem; color: var(--color-text); }
+.modulo button { font-size: 0.875rem; font-weight: 600; }
+.modulo button svg { width: 1.2rem; height: 1.2rem; flex-shrink: 0; }
+.modulo button:disabled { cursor: not-allowed; opacity: 0.65; }
+.modulo :is(button, input, textarea):focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.descripcion { color: var(--color-text); font-size: 0.875rem; line-height: 1.5; margin: 0.7rem 0 0; }
+.filtros { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1rem; padding: 1rem; }
+.seccion { min-width: 0; padding: 1.25rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-medium); background: var(--color-surface); scroll-margin-top: 1rem; }
+.seccion legend { padding: 0 0.5rem; font-weight: 600; color: var(--color-text); }
+.seccion h2 { margin-top: 0; font-size: 1.125rem; }
+.seccion > p { line-height: 1.5; font-size: 0.875rem; }
+.grilla { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.campo { display: grid; gap: 0.4rem; min-width: 0; align-content: start; }
+.campo label { font-size: 0.875rem; color: var(--color-text); font-weight: 600; }
+.campo :is(input:where(:not([type='checkbox'], [type='radio'])), textarea) { width: 100%; min-height: 2.8rem; padding: 0.7rem; border: 1px solid var(--color-text-muted); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-text); font: inherit; font-size: 0.875rem; }
+.campo textarea { min-height: 6rem; resize: vertical; }
+.campo [aria-invalid='true'] { border-color: var(--color-danger); }
+.error { padding: 1rem; border-radius: var(--radius-small); background: var(--color-danger-soft); color: var(--color-danger-text); }
+.error small { color: var(--color-danger-text); }
+.aviso { padding: 1rem; border-radius: var(--radius-small); background: var(--color-warning-soft); color: var(--color-text); font-size: 0.875rem; line-height: 1.5; }
+.estado { display: inline-flex; padding: 0.35rem 0.7rem; border-radius: 999px; background: var(--color-surface-muted); color: var(--color-text); font-size: 0.8125rem; font-weight: 600; white-space: nowrap; }
+.estado[data-tono='exito'] { background: var(--color-success-soft); }
+.estado[data-tono='peligro'] { background: var(--color-danger-soft); }
+.estado[data-tono='advertencia'] { background: var(--color-warning-soft); }
+.acciones { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+.secundario { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.65rem 1rem; min-height: 2.8rem; border: 1px solid var(--color-text-muted); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-primary); cursor: pointer; }
+.secundario:hover { background: var(--color-surface-muted); }
+.enlace { border: 0; padding: 0; background: transparent; color: var(--color-primary); cursor: pointer; text-align: left; overflow-wrap: anywhere; }
+.linea { display: grid; gap: 1rem; padding: 1rem; background: var(--color-surface-muted); border-radius: var(--radius-small); margin-bottom: 1rem; }
+.linea h3 { font-size: 1rem; margin: 0; }
+.metricas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 1rem; }
+.metrica { padding: 1.25rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-medium); background: var(--color-surface); border-top: 3px solid var(--color-secondary); }
+.metrica dt { font-size: 0.875rem; }
+.metrica dd { font-size: 1.75rem; margin: 0.65rem 0 0; font-weight: 600; color: var(--color-primary); overflow-wrap: anywhere; }
+.detalle dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.detalle dt { font-size: 0.75rem; color: var(--color-text); }
+.detalle dd { font-size: 0.875rem; }
+.detalle { min-width: 0; }
+.lista { display: grid; gap: 0.75rem; }
+.id { overflow-wrap: anywhere; }
+.tabla { min-width: 0; overflow-x: auto; }
+.fila { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; }
+.cabeceraTabla { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: 1rem; }
+@media (max-width: 48rem) { .grilla, .fila { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 40rem) { .acciones > button { flex: 1 1 auto; } .detalle dl { grid-template-columns: 1fr; } .seccion { padding: 1rem; } }

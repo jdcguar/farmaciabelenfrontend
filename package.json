@@ -1,0 +1,44 @@
+{
+  "name": "farmaciabelenfrontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test:activos": "node --test tests/activos.test.cjs",
+    "test:activos:ui": "node tests/activos-ui.cjs",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "test:cantidades": "node --test tests/cantidades.test.cjs",
+    "test:cantidades:ui": "node tests/cantidades-ui.cjs",
+    "test:catalogos-farmacia": "node --test tests/catalogos-farmacia.test.cjs",
+    "test:inventario": "node --test tests/inventario.test.cjs",
+    "test:compras": "node --test tests/compras.test.cjs",
+    "test:caja": "node --test tests/caja.test.cjs",
+    "test:ventas": "node --test tests/ventas.test.cjs tests/comprobantes-venta.test.cjs",
+    "test:costeo": "node --test tests/costeo.test.cjs",
+    "test:sanitaria": "node --test tests/sanitaria.test.cjs",
+    "test:roles": "node --test tests/roles.test.cjs",
+    "test:empleados": "node --test tests/empleados.test.cjs",
+    "test:traslados": "node --test tests/traslados.test.cjs tests/traslados-operaciones.test.cjs tests/traslados-incidencias.test.cjs tests/traslados-documentos.test.cjs",
+    "preview": "vite preview",
+    "predev": "node scripts/sincronizar-navegacion.mjs",
+    "prebuild": "node scripts/sincronizar-navegacion.mjs",
+    "test:navegacion": "node --test tests/navegacion.test.cjs"
+  },
+  "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.19.16",
+    "@tanstack/react-table": "^9.2.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}

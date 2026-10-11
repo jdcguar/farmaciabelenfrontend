@@ -1,0 +1,11 @@
+import type { SesionUsuario } from '../../autenticacion/autenticacion.types'
+import { ReferenciasCatalogo } from '../../catalogos-farmacia/components/referencia-catalogo'
+import type { RutaVenta } from '../venta.config'
+import { VentaListadoView } from './venta-listado-view'
+import { VentaBorradorView } from './venta-borrador-view'
+import { VentaDetalleView } from './venta-detalle-view'
+import { VentaOperacionView } from './venta-operacion-view'
+import { VentaPoliticaView } from './venta-politica-view'
+import { VentaContingenciaView } from './venta-contingencia-view'
+import styles from '../venta.module.css'
+export function VentaView({ruta,consulta,sesion,onNavegar,onCambiosPendientes}:{ruta:RutaVenta;consulta:string;sesion:SesionUsuario;onNavegar:(r:string)=>void;onCambiosPendientes:(v:boolean)=>void}){const props={sesion,onNavegar,onCambiosPendientes};return<ReferenciasCatalogo sesion={sesion} onNavegar={onNavegar}><div className={styles.modulo}>{ruta.modo==='listado'||ruta.modo==='contingencias'?<VentaListadoView contingencias={ruta.modo==='contingencias'} consulta={consulta} {...props}/>:ruta.modo==='politica'?<VentaPoliticaView {...props}/>:['nuevo','editar','digitalizar'].includes(ruta.modo)?<VentaBorradorView id={ruta.id} digitalizar={ruta.modo==='digitalizar'} {...props}/>:ruta.modo==='detalle'?<VentaDetalleView id={ruta.id!} {...props}/>:ruta.modo==='operacion'?<VentaOperacionView id={ruta.id!} accion={ruta.accion!} {...props}/>:<VentaContingenciaView id={ruta.id} cerrar={ruta.modo==='cerrar'} {...props}/>}</div></ReferenciasCatalogo>}

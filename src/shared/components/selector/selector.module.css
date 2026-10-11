@@ -1,0 +1,33 @@
+.selector { position: relative; width: 100%; min-width: 0; }
+.selector .control {
+  display: flex; width: 100%; min-height: 2.85rem; align-items: center; justify-content: space-between; gap: 0.75rem;
+  padding: 0.65rem 0.8rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small);
+  background: var(--color-surface); color: var(--color-text); font: inherit; font-size: 0.84rem; font-weight: 400; text-align: left; cursor: pointer;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.control > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.control > svg { width: 1rem; height: 1rem; flex: 0 0 auto; color: var(--color-primary); transition: transform var(--transition-fast); }
+.control[aria-expanded='true'] > svg { transform: rotate(180deg); }
+.selector .control:hover:not(:disabled) { border-color: var(--color-primary); background: var(--color-surface); }
+.selector .control:focus, .selector .control[aria-expanded='true'] { outline: none; border-color: var(--color-primary); box-shadow: inset 0 0 0 1px var(--color-primary); }
+.selector .control[aria-invalid='true'] { border-color: var(--color-danger); }
+.selector .control[aria-invalid='true']:focus { box-shadow: inset 0 0 0 1px var(--color-danger); }
+.selector .control:disabled { background: var(--color-surface); color: var(--color-text-muted); cursor: not-allowed; opacity: 0.65; }
+.placeholder { color: var(--color-text-muted); }
+.compacto { width: 5.5rem; }
+.selector.compacto .control { min-height: 2.35rem; padding: 0.4rem 0.65rem; color: var(--color-primary); font-size: 0.76rem; font-weight: 600; }
+.panel { position: fixed; z-index: 1300; display: flex; flex-direction: column; overflow: hidden; padding: 0.35rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-surface); box-shadow: 0 0.75rem 2rem color-mix(in srgb, var(--color-text) 15%, transparent); }
+.busqueda { position: relative; padding: 0.3rem 0.2rem 0.6rem; border-bottom: 1px solid var(--color-border-strong); }
+.busqueda > svg { position: absolute; left: 0.9rem; top: 1rem; width: 1rem; height: 1rem; color: var(--color-primary); }
+.busqueda input { width: 100%; min-height: 2.4rem; padding: 0.5rem 0.7rem 0.5rem 2.2rem; border: 1px solid var(--color-border-strong); border-radius: 0.5rem; background: var(--color-surface); color: var(--color-text); font-size: 0.78rem; }
+.busqueda input:focus { outline: none; border-color: var(--color-primary); box-shadow: inset 0 0 0 1px var(--color-primary); }
+.lista { overflow-y: auto; min-height: 0; overscroll-behavior: contain; padding: 0.15rem 0; outline: none; scrollbar-width: thin; scrollbar-color: var(--color-border-strong) transparent; }
+.opcion { display: flex; min-height: 2.65rem; align-items: center; justify-content: space-between; gap: 0.75rem; margin: 0.15rem 0; padding: 0.65rem 0.75rem; border-radius: 0.5rem; color: var(--color-text); font-size: 0.8rem; line-height: 1.4; cursor: pointer; overflow-wrap: anywhere; }
+.opcion[data-activa='true'] { background: var(--color-surface-muted); }
+.opcion[aria-selected='true'] { background: var(--color-info-soft); color: var(--color-primary); font-weight: 600; }
+.opcion[data-activa='true'][aria-selected='true'] { box-shadow: inset 3px 0 var(--color-primary); }
+.opcion[aria-disabled='true'] { color: var(--color-text-muted); opacity: 0.55; cursor: not-allowed; }
+.opcion > svg { width: 1rem; height: 1rem; flex: 0 0 auto; }
+.sinResultados { margin: 0; padding: 1rem; text-align: center; color: var(--color-text-muted); font-size: 0.78rem; }
+.estadoRemoto { display: grid; gap: 0.5rem; padding: 0.75rem; color: var(--color-text); font-size: 0.8125rem; }
+.estadoRemoto button { min-height: 2.75rem; padding: 0.5rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-surface-muted); color: var(--color-primary); cursor: pointer; }

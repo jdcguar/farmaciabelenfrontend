@@ -1,0 +1,45 @@
+.modulo { display:grid; gap:1rem; min-width:0; }
+.modulo article, .modulo fieldset, .modulo [class*='panelTabla'] { min-width:0; }
+.modulo [class*='contenedorTabla'] { width:100%; max-width:100%; overflow-x:auto; }
+.modulo input, .modulo textarea { border-color:var(--color-text-muted); }
+.modulo button:focus-visible, .modulo input:focus-visible { outline:2px solid var(--color-primary); outline-offset:2px; }
+.modulo small, .modulo dt { color:var(--color-text); font-size:0.8125rem; }
+.modulo p { line-height:1.5; }
+.modulo dd { overflow-wrap:anywhere; }
+.modulo fieldset > legend + * { clear:both; }
+.modulo button > svg { width:1.1rem; height:1.1rem; }
+.contenido { display:grid; gap:1rem; min-width:0; }
+.grilla { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; gap:1rem; min-width:0; }
+.grilla > div:has(textarea) { grid-column:1 / -1; }
+.modulo fieldset dl { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:0; }
+.modulo fieldset dl > div { display:grid; gap:0.4rem; min-width:0; }
+.modulo fieldset dd { margin:0; font-weight:600; font-size:0.875rem; }
+.acciones { display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem; }
+.filtrosListado { display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem; min-width:0; max-width:100%; }
+.filtroProducto { width:18rem; max-width:100%; min-width:0; }
+.filtroPrioridad { width:15rem; max-width:100%; min-width:0; }
+.enlace { border:0; background:none; color:var(--color-primary); border-radius:var(--radius-small); font:inherit; font-size:0.875rem; text-align:left; min-height:2.75rem; padding:0.5rem; cursor:pointer; overflow-wrap:anywhere; }
+.enlace:hover { background:var(--color-surface-muted); }
+.estado { display:inline-flex; padding:0.4rem 0.75rem; border-radius:var(--radius-medium); background:var(--color-info-soft); color:var(--color-text); font-size:0.8125rem; font-weight:600; }
+.estado[data-estado='VENCIDO'], .estado[data-estado='CRITICO'], .estado[data-estado='SUSPENDIDO'], .estado[data-estado='CANCELADO'], .estado[data-estado='NO_APTO'], .estado[data-estado='DESCONOCIDO'] { background:var(--color-danger-soft); }
+.estado[data-estado='PROPUESTA'], .estado[data-estado='PARCIAL'], .estado[data-estado='PENDIENTE'], .estado[data-estado='VERIFICACION'], .estado[data-estado='PRIORITARIO'], .estado[data-estado='PREVENTIVO'] { background:var(--color-warning-soft); }
+.estado[data-estado='APTO'], .estado[data-estado='RESUELTA'], .estado[data-estado='LEVANTADO'], .estado[data-estado='CONCILIADA'], .estado[data-estado='VIGENTE'] { background:var(--color-success-soft); }
+.aviso { margin:0; padding:1rem; background:var(--color-surface-muted); color:var(--color-text); border-radius:var(--radius-small); font-size:0.875rem; line-height:1.5; overflow-wrap:anywhere; }
+.identidad { display:grid; gap:0.75rem; justify-items:center; text-align:center; padding:1.25rem 0; clear:both; }
+.identidad > span { display:grid; place-items:center; width:5rem; height:5rem; color:var(--color-primary); background:var(--color-surface-muted); border-radius:var(--radius-medium); }
+.identidad > span svg { width:2.5rem; height:2.5rem; }
+.perfil { max-height:calc(100dvh - 7rem); overflow-y:auto; }
+.accionesPerfil { display:grid; gap:0.65rem; }
+.accionesPerfil button { width:100%; font-size:0.875rem; }
+.completa { grid-column:1 / -1; min-width:0; }
+.linea { display:grid; gap:0.75rem; padding:1rem; border:1px solid var(--color-border); border-radius:var(--radius-small); min-width:0; }
+.linea h3 { font-size:1rem; margin:0; }
+.check { composes: opcionCasilla from '../../shared/components/gestion-modulo/formulario-modulo.module.css'; }
+.resumen { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr)); gap:1rem; }
+.mini { display:grid; gap:0.4rem; padding:1rem; background:var(--color-surface-muted); border-radius:var(--radius-small); overflow-wrap:anywhere; }
+.mini strong { font-size:1.1rem; }
+.subtitulo { font-size:0.875rem; }
+
+@media(max-width:62rem) { .perfil { max-height:none; overflow:visible; } }
+@media(max-width:46rem) { .grilla { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:46rem) { .modulo fieldset dl { grid-template-columns:minmax(0,1fr); } }

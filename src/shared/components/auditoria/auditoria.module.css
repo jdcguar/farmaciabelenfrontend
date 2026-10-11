@@ -1,0 +1,79 @@
+.panel { overflow: hidden; min-width: 0; border: 1px solid var(--color-border-strong); border-radius: var(--radius-medium); background: var(--color-surface); container-type: inline-size; scroll-margin-top: 1rem; }
+.cabecera { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.2rem 1.25rem; border-bottom: 1px solid var(--color-border-strong); }
+.cabecera h2 { margin: 0; color: var(--color-text); font-size: 1rem; }
+.cabecera p { margin: 0.3rem 0 0; color: var(--color-text-muted); font-size: 0.72rem; }
+.acciones { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 0.6rem; }
+.acciones > span { padding: 0.35rem 0.65rem; border-radius: 0.5rem; background: var(--color-surface-muted); color: var(--color-primary); font-size: 0.72rem; font-weight: 600; }
+.acciones button, .error button { min-height: 2.25rem; padding: 0.4rem 0.7rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-primary); cursor: pointer; font-size: 0.73rem; font-weight: 600; }
+.contenido { min-width: 0; }
+.estado { margin: 0; padding: 2rem 1.25rem; color: var(--color-text-muted); font-size: 0.8rem; text-align: center; }
+.error { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: 1rem 1.25rem; padding: 0.85rem; border: 1px solid var(--color-danger); border-radius: var(--radius-small); background: var(--color-danger-soft); color: var(--color-danger-text); font-size: 0.8rem; }
+.listaAuditoria { min-width: 0; }
+.barraFiltros { display: grid; gap: 0.7rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-border-strong); }
+.barraFiltros > span { color: var(--color-text-muted); font-size: 0.7rem; font-weight: 600; }
+.filtros { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filtros > div { min-width: 0; }
+.filtros button { width: auto; min-width: 0; min-height: 2.4rem; gap: 0.9rem; padding: 0.5rem 0.75rem; border: 1px solid var(--color-border-strong); border-radius: 0.65rem; background: var(--color-surface); color: var(--color-text-muted); font-size: 0.74rem; }
+.filtros button:hover, .filtros button[aria-expanded='true'], .filtros button[data-filtro-activo='true'], .filtros > div[data-ordenado='true'] > button { border-color: var(--color-primary); background: var(--color-surface-muted); color: var(--color-primary); }
+.eventos { display: grid; gap: 1rem; margin: 0; padding: 1.25rem; background: var(--color-background); list-style: none; }
+.evento { position: relative; display: grid; grid-template-columns: 10.5rem minmax(0, 1fr); align-items: start; gap: 1rem; min-width: 0; }
+.evento:not(:last-child)::before { content: ''; position: absolute; z-index: 0; left: 0.9rem; top: 2.5rem; bottom: -1rem; width: 1px; background: var(--color-border-strong); }
+.momento { position: relative; display: grid; grid-template-columns: 1.85rem minmax(0, 1fr); align-items: start; gap: 0.65rem; padding-top: 0.4rem; }
+.marcaTiempo { display: grid; width: 1.85rem; height: 1.85rem; place-items: center; border: 1px solid var(--color-border-strong); border-radius: 50%; background: var(--color-surface); color: var(--color-primary); }
+.marcaTiempo svg { width: 1rem; height: 1rem; }
+.momento > div { display: grid; gap: 0.35rem; }
+.momento > div > span { color: var(--color-text-muted); font-size: 0.65rem; }
+.momento time { color: var(--color-text); font-size: 0.75rem; font-weight: 600; line-height: 1.6; overflow-wrap: anywhere; }
+.registro { position: relative; min-width: 0; overflow: hidden; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-surface); }
+.registro[data-expandido='true'] { border-color: var(--color-primary); }
+.cabeceraEvento { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1rem; }
+.identidadEvento { display: grid; gap: 0.6rem; min-width: 0; }
+.accion { display: inline-flex; align-items: center; justify-self: start; gap: 0.4rem; max-width: 100%; padding: 0.3rem 0.55rem; border-radius: 0.5rem; background: var(--color-surface-muted); color: var(--color-primary); font-size: 0.71rem; font-weight: 600; }
+.accion > svg { flex: 0 0 auto; width: 1rem; height: 1rem; }
+.accion > span { min-width: 0; padding: 0; background: transparent; color: inherit; font-size: inherit; white-space: normal; overflow-wrap: anywhere; }
+.accion[data-operacion='CREAR'] { background: var(--color-success-soft); color: var(--color-text); }
+.accion[data-operacion='INACTIVAR'], .accion[data-operacion='ELIMINAR_FOTO'] { background: var(--color-warning-soft); color: var(--color-text); }
+.identidadEvento h3 { margin: 0; color: var(--color-text); font-size: 0.87rem; font-weight: 600; line-height: 1.6; overflow-wrap: anywhere; }
+.cambios { flex: 0 0 auto; font-size: 0.72rem; }
+.botonCambios { display: inline-flex; align-items: center; gap: 0.4rem; min-height: 2.4rem; padding: 0.5rem 0.7rem; border: 1px solid var(--color-border-strong); border-radius: 0.65rem; background: var(--color-surface); color: var(--color-primary); font-size: 0.73rem; font-weight: 600; cursor: pointer; }
+.botonCambios:hover { border-color: var(--color-primary); background: var(--color-surface-muted); }
+.botonCambios[aria-expanded='true'] { border-color: var(--color-primary); background: var(--color-primary); color: var(--color-text-inverse); }
+.datosEvento { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr); gap: 1rem; margin: 0; padding: 0 1rem 1rem; }
+.datosEvento > div { min-width: 0; }
+.datosEvento dt { margin-bottom: 0.3rem; color: var(--color-text-muted); font-size: 0.66rem; }
+.datosEvento dd { margin: 0; color: var(--color-text); font-size: 0.75rem; overflow-wrap: anywhere; }
+.datosEvento strong { font-weight: 600; }
+.datosEvento small { display: block; margin-top: 0.25rem; color: var(--color-text-muted); font-size: 0.65rem; }
+.expandido { border-top: 1px solid var(--color-border-strong); background: var(--color-surface-muted); }
+.detalle { padding: 1rem; }
+.tituloCambios { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem; }
+.tituloCambios h4 { margin: 0; color: var(--color-text); font-size: 0.83rem; }
+.tituloCambios > span { color: var(--color-text-muted); font-size: 0.68rem; }
+.listaCambios { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr)); gap: 0.7rem; }
+.cambio { min-width: 0; padding: 0.85rem; border: 1px solid var(--color-border-strong); border-radius: 0.65rem; background: var(--color-surface); }
+.cambio h5 { display: flex; align-items: baseline; gap: 0.5rem; margin: 0 0 0.7rem; color: var(--color-text); font-size: 0.75rem; font-weight: 600; overflow-wrap: anywhere; }
+.cambio h5 > span { color: var(--color-primary); font-size: 0.65rem; font-weight: 500; }
+.comparacion { display: grid; grid-template-columns: minmax(0, 1fr) 1.1rem minmax(0, 1fr); align-items: stretch; gap: 0.45rem; margin: 0; }
+.comparacion > dl { min-width: 0; margin: 0; padding: 0.65rem; border: 1px solid var(--color-border-strong); border-radius: 0.5rem; }
+.comparacion dt { margin-bottom: 0.45rem; color: var(--color-text-muted); font-size: 0.65rem; font-weight: 600; }
+.comparacion dd { margin: 0; color: var(--color-text); font-size: 0.75rem; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+.comparacion .anterior { border-style: dashed; }
+.comparacion .nuevo { border-left: 3px solid var(--color-primary); background: color-mix(in srgb, var(--color-surface-muted) 60%, var(--color-surface)); }
+.flecha { display: grid; place-items: center; color: var(--color-primary); }
+.flecha svg { width: 1rem; height: 1rem; }
+@container (max-width: 42rem) {
+  .evento { grid-template-columns: minmax(0, 1fr); gap: 0.65rem; }
+  .evento:not(:last-child)::before { display: none; }
+  .momento { align-items: center; padding-top: 0; }
+  .momento > div { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
+}
+@container (max-width: 28rem) {
+  .cabecera { align-items: stretch; flex-direction: column; padding: 1rem; }
+  .acciones { justify-content: flex-start; }
+  .barraFiltros, .eventos { padding: 1rem; }
+  .cabeceraEvento { flex-direction: column; gap: 0.7rem; }
+  .datosEvento { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+  .comparacion { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
+  .flecha { display: none; }
+  .error { align-items: stretch; flex-direction: column; }
+}

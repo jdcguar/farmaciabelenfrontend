@@ -1,0 +1,21 @@
+.pagina { min-width: 0; }
+.resumenValoracion { display: grid; gap: .75rem; min-width: 0; }
+.indicadores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 0; }
+.indicadores > div { display: grid; align-content: start; gap: .6rem; padding: 1.25rem; }
+.indicadores dt { color: var(--color-text); font-size: .875rem; font-weight: 600; }
+.indicadores dd { margin: 0; color: var(--color-primary-hover); font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.indicadores .notaIndicador { color: var(--color-text); font-size: .8125rem; font-weight: 400; line-height: 1.5; }
+.nota { margin: 0; padding: .875rem 1rem; border-radius: var(--radius-small); background: var(--color-surface-muted); color: var(--color-text); font-size: .8125rem; line-height: 1.5; }
+.valor { color: var(--color-text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.valorDestacado { color: var(--color-primary-hover); font-weight: 700; }
+.avatar svg { width: 1.35rem; height: 1.35rem; }
+.estadoConocido { color: var(--color-text); background: var(--color-success-soft); }
+.estadoPendiente { color: var(--color-text); background: var(--color-warning-soft); }
+.acciones button { width: 2.75rem; height: 2.75rem; }
+.detalle { text-align: left; }
+.detalle dt { color: var(--color-text); }
+.detalle dd { line-height: 1.5; font-variant-numeric: tabular-nums; }
+.formulario { display: grid; gap: 1rem; min-width: 0; text-align: left; }
+.formulario fieldset { display: grid; gap: 1rem; margin: 0; padding: 1rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); }
+.formulario legend { padding: 0 .5rem; color: var(--color-text); font-size: .875rem; font-weight: 600; }
+@media (max-width: 56rem) { .indicadores { grid-template-columns: minmax(0, 1fr); } }

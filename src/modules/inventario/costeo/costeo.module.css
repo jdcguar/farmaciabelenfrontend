@@ -1,0 +1,37 @@
+.filtros { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; min-width: 0; }
+.campo { display: grid; gap: .45rem; min-width: 0; font-size: .875rem; color: var(--color-text); }
+.campo input, .campo textarea { width: 100%; box-sizing: border-box; min-height: 2.75rem; padding: .65rem .8rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-text); font: inherit; }
+.campo textarea { min-height: 5rem; resize: vertical; }
+.campo small { font-size: .8125rem; color: var(--color-text-muted); }
+.error { color: var(--color-danger-text); font-size: .875rem; }
+.ayuda { margin: 0; padding: .8rem 1rem; background: var(--color-surface-muted); border-radius: var(--radius-small); line-height: 1.5; font-size: .875rem; }
+.resumen { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .8rem; margin: 1rem 0; }
+.resumen div { display: grid; gap: .35rem; min-width: 0; overflow-wrap: anywhere; }
+.resumen dt { font-size: .8125rem; color: var(--color-text-muted); }
+.resumen dd { margin: 0; font-weight: 600; font-size: .875rem; }
+.acciones { display: flex; flex-wrap: wrap; gap: .65rem; align-items: center; }
+.acciones button { min-height: 2.75rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-primary); padding: .5rem .8rem; cursor: pointer; font: inherit; }
+.tabla { min-width: 0; overflow-x: auto; }
+.resumenVentas { display: grid; gap: .8rem; min-width: 0; }
+.indicadoresVentas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 0; }
+.indicadoresVentas > div { display: grid; align-content: start; gap: .5rem; min-width: 0; padding: 1.25rem; border: 1px solid var(--color-border); border-radius: var(--radius-medium); background: var(--color-surface); }
+.indicadoresVentas dt { color: var(--color-text); font-size: .875rem; font-weight: 600; }
+.indicadoresVentas dd { margin: 0; color: var(--color-primary-hover); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.indicadoresVentas .notaIndicador { font-size: .8125rem; font-weight: 400; line-height: 1.5; color: var(--color-text); }
+.notaHistorica { margin: 0; padding: .85rem 1rem; border-radius: var(--radius-small); background: var(--color-surface-muted); color: var(--color-text); font-size: .8125rem; line-height: 1.5; }
+.contextoListado { flex: 1 1 18rem; min-width: 0; margin: 0; font-size: .875rem; color: var(--color-text); }
+.botonFiltro { min-height: 3rem; padding: .65rem 1rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-primary); font: inherit; font-size: .875rem; font-weight: 600; cursor: pointer; transition: background var(--transition-fast); }
+.botonFiltro:hover { background: var(--color-surface-muted); }
+.descripcionSugerencias { margin: .75rem 0 0; color: var(--color-text); font-size: .875rem; line-height: 1.5; }
+.busquedaSugerencias { display: grid; flex: 1 1 22rem; min-width: 0; gap: .4rem; }
+.busquedaSugerencias label { font-size: .875rem; font-weight: 600; color: var(--color-text); }
+.busquedaSugerencias small { color: var(--color-text); }
+.listaSugerencias .precioSugerencia { font-weight: 700; color: var(--color-primary-hover); font-variant-numeric: tabular-nums; }
+.listaSugerencias .sugerenciaPendiente { color: var(--color-text); background: var(--color-warning-soft); }
+.listaSugerencias .sugerenciaAprobada { color: var(--color-text); background: var(--color-success-soft); }
+.accionesResumenSugerencias button { min-height: 2.75rem; font-size: .8125rem; }
+@media (max-width: 52rem) {
+  .listaSugerencias :global(thead) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0; white-space: nowrap; }
+}
+@media (max-width: 600px) { .filtros, .resumen { grid-template-columns: minmax(0,1fr); } }
+@media (max-width: 600px) { .indicadoresVentas { grid-template-columns: minmax(0, 1fr); } }

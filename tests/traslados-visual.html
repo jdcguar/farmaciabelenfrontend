@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Revisión simulada de Traslados</title>
+    <link rel="stylesheet" href="/src/styles/variables.css" />
+    <style>
+      body { margin: 1rem; background: var(--color-background); color: var(--color-text); font: 14px system-ui; }
+      header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+      select { padding: .5rem; }
+      .pantallas { display: flex; align-items: start; gap: 1rem; }
+      iframe { display: block; border: 0; background: var(--color-surface); }
+      h1, h2 { font-size: 1rem; margin: 0 0 .5rem; }
+      header h1 { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header><h1>Traslados · revisión simulada en memoria</h1><label for="vista">Vista</label><select id="vista"><option value="/traslados">Listado</option><option value="/traslados/despachos">Listado de despachos</option><option value="/traslados/recepciones">Listado de recepciones</option><option value="/traslados/nuevo">Nueva solicitud</option><option value="/traslados/10000000-0000-4000-8000-000000000100">Detalle</option><option value="/traslados/10000000-0000-4000-8000-000000000200/preparar">Preparación</option><option value="/traslados/despachos/10000000-0000-4000-8000-000000000502">Despacho</option><option value="/traslados/despachos/10000000-0000-4000-8000-000000000302/recepciones/nueva">Registrar recepción</option><option value="/traslados/recepciones/10000000-0000-4000-8000-000000000600">Recepción</option><option value="/traslados/10000000-0000-4000-8000-000000000300/incidencias/nueva">Incidencia</option><option value="/traslados/10000000-0000-4000-8000-000000000300/incidencias/10000000-0000-4000-8000-000000000303/resolver">Resolver</option><option value="/traslados/10000000-0000-4000-8000-000000000300/incidencias/10000000-0000-4000-8000-000000000700/justificar">Justificar</option><option value="/traslados/10000000-0000-4000-8000-000000000300/retorno">Retorno</option><option value="/traslados/10000000-0000-4000-8000-000000000300/complementario">Complementario</option></select></header>
+    <div class="pantallas">
+      <section><h2>Móvil · 390 × 844</h2><iframe id="movil" title="Vista móvil de Traslados" width="390" height="844" src="/traslados"></iframe></section>
+      <section><h2>Tableta · 768 × 1024</h2><iframe id="tableta" title="Vista tableta de Traslados" width="768" height="1024" src="/traslados"></iframe></section>
+    </div>
+    <script>
+      // Harness de revisión servido por Vite, fuera de las rutas de la aplicación.
+      document.getElementById('vista').addEventListener('change', event => {
+        for (const marco of document.querySelectorAll('iframe')) marco.src = event.target.value
+      })
+    </script>
+  </body>
+</html>

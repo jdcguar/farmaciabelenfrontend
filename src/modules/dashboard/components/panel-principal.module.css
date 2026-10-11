@@ -1,0 +1,74 @@
+.panel { display: grid; min-width: 0; gap: 1rem; }
+.bienvenida { display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1rem 1.5rem; border-radius: var(--radius-medium); background: var(--color-primary); color: var(--color-text-inverse); }
+.bienvenida h1 { margin: 0; font-size: clamp(1.5rem, 2vw, 1.9rem); font-weight: 700; line-height: 1.25; letter-spacing: -0.035em; overflow-wrap: anywhere; }
+.bienvenida p { margin: 0.35rem 0 0; font-size: 0.875rem; line-height: 1.5; }
+.sucursal { display: flex; min-width: 0; max-width: 22rem; align-items: center; gap: 0.75rem; padding-left: 1.25rem; border-left: 1px solid var(--color-secondary); }
+.sucursal > svg { width: 1.5rem; height: 1.5rem; flex: 0 0 auto; }
+.sucursal > div { display: grid; min-width: 0; gap: 0.25rem; }
+.sucursal span { color: var(--color-text-inverse); font-size: 0.75rem; }
+.sucursal strong { font-size: 0.875rem; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+.directorio { display: grid; min-width: 0; gap: 1rem; padding: 1.25rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-medium); background: var(--color-surface); }
+.cabecera { display: flex; min-width: 0; align-items: center; justify-content: space-between; gap: 1rem; }
+.contexto { display: flex; min-width: 0; align-items: center; gap: 0.75rem; }
+.contexto h2 { margin: 0; color: var(--color-text); font-size: 1.125rem; font-weight: 600; line-height: 1.4; }
+.contexto h2:focus { outline: none; }
+.contexto p { margin: 0.25rem 0 0; color: var(--color-text); font-size: 0.875rem; line-height: 1.5; }
+.volver { display: grid; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; padding: 0; border: 1px solid var(--color-primary); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-primary); cursor: pointer; place-items: center; }
+.volver svg { width: 1.1rem; height: 1.1rem; transform: rotate(180deg); }
+.busqueda { display: flex; width: 18rem; min-width: 12rem; min-height: 2.75rem; flex: 0 0 auto; align-items: center; gap: 0.5rem; padding: 0.4rem 0.75rem; border: 1px solid var(--color-text-muted); border-radius: var(--radius-small); background: var(--color-surface); }
+.busqueda > svg { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; color: var(--color-primary); }
+.busqueda input { width: 100%; min-width: 0; border: 0; padding: 0; background: transparent; color: var(--color-text); font-size: 0.875rem; }
+.busqueda input::placeholder { color: var(--color-text); opacity: 0.75; }
+.busqueda input:focus-visible { outline: none; box-shadow: none; }
+.busqueda:focus-within { border-color: var(--color-primary); box-shadow: inset 0 0 0 1px var(--color-primary); }
+.busqueda button { display: grid; width: 2rem; height: 2rem; flex: 0 0 auto; padding: 0; border: 0; border-radius: 0.5rem; background: transparent; color: var(--color-primary); cursor: pointer; place-items: center; }
+.busqueda button svg { width: 1rem; height: 1rem; }
+.cuadricula { display: grid; min-width: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; align-items: start; }
+.tarjetaArea, .tarjetaModulo { display: grid; min-width: 0; width: 100%; min-height: 6rem; grid-template-columns: 2.5rem minmax(0, 1fr) 0.9rem; align-items: center; gap: 0.75rem; padding: 0.75rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-text); text-align: left; cursor: pointer; transition: background var(--transition-fast), border-color var(--transition-fast); }
+.tarjetaArea:hover, .tarjetaModulo:hover { border-color: var(--color-primary); background: var(--color-surface-muted); }
+.iconoArea, .iconoModulo { display: grid; width: 2.5rem; height: 2.5rem; border-radius: var(--radius-small); place-items: center; }
+.iconoArea { background: var(--color-primary); color: var(--color-text-inverse); }
+.iconoModulo { background: var(--color-surface-muted); color: var(--color-primary); }
+.iconoArea svg, .iconoModulo svg { width: 1.25rem; height: 1.25rem; }
+.textoTarjeta { display: grid; min-width: 0; gap: 0.3rem; }
+.textoTarjeta strong { font-size: 0.94rem; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+.textoTarjeta > span { color: var(--color-primary-hover); font-size: 0.8125rem; line-height: 1.5; }
+.flecha { width: 0.9rem; height: 0.9rem; color: var(--color-primary); }
+.pieDirectorio { display: flex; min-width: 0; min-height: 2.75rem; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 0.5rem; border-top: 1px solid var(--color-border); }
+.pieDirectorio > p { margin: 0; color: var(--color-text); font-size: 0.8125rem; line-height: 1.5; }
+.paginacion { display: flex; align-items: center; gap: 0.75rem; }
+.paginacion > span { color: var(--color-text); font-size: 0.8125rem; white-space: nowrap; }
+.paginacion button { display: grid; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; padding: 0; border: 1px solid var(--color-primary); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-primary); cursor: pointer; place-items: center; }
+.paginacion button svg { width: 1rem; height: 1rem; }
+.paginacion button:first-child svg { transform: rotate(180deg); }
+.paginacion button:disabled { border-color: var(--color-border-strong); color: var(--color-text-muted); cursor: default; }
+.volver:hover, .paginacion button:hover:not(:disabled), .busqueda button:hover { background: var(--color-surface-muted); }
+.panel :is(button, input):focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.panel .busqueda input:focus-visible { outline: none; }
+.vacio { display: grid; justify-items: center; gap: 0.65rem; padding: 2rem; border-radius: var(--radius-medium); background: var(--color-surface); color: var(--color-text); text-align: center; }
+.vacio > svg { width: 2rem; height: 2rem; color: var(--color-primary); }
+.vacio :is(h2, h3) { margin: 0; font-size: 1.125rem; font-weight: 600; }
+.vacio p { max-width: 30rem; margin: 0; font-size: 0.875rem; line-height: 1.5; }
+.vacio button { min-height: 2.75rem; margin-top: 0.4rem; padding: 0.65rem 1rem; border: 0; border-radius: var(--radius-small); background: var(--color-primary); color: var(--color-text-inverse); font-size: 0.875rem; font-weight: 600; cursor: pointer; }
+
+@media (max-width: 70rem) {
+  .bienvenida { gap: 1rem; padding: 1rem; }
+  .sucursal { max-width: 16rem; padding-left: 1rem; }
+  .directorio { padding: 1rem; }
+  .busqueda { width: 14rem; }
+  .tarjetaArea, .tarjetaModulo { grid-template-columns: 2rem minmax(0, 1fr) 0.8rem; gap: 0.5rem; }
+  .iconoArea, .iconoModulo { width: 2rem; height: 2rem; }
+}
+@media (max-width: 42rem) {
+  .bienvenida { align-items: stretch; flex-direction: column; gap: 0.75rem; }
+  .sucursal { max-width: none; padding: 0.75rem 0 0; border-left: 0; border-top: 1px solid var(--color-secondary); }
+  .cabecera { align-items: stretch; flex-direction: column; gap: 0.75rem; }
+  .busqueda { width: 100%; }
+  .cuadricula { grid-template-columns: 1fr; }
+  .tarjetaArea, .tarjetaModulo { min-height: 4.75rem; }
+  .pieDirectorio { align-items: stretch; flex-direction: column; gap: 0.75rem; }
+  .paginacion { justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tarjetaArea, .tarjetaModulo { transition: none; }
+}

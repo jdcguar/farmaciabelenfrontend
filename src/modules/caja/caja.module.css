@@ -1,0 +1,47 @@
+.modulo { min-width: 0; }
+.modulo button > svg { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
+.modulo button:focus-visible, .modulo a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.modulo input, .modulo textarea { border-color: var(--color-text-muted); }
+.modulo small, .modulo dt { color: var(--color-text); font-size: 0.8125rem; }
+.modulo { display: grid; gap: 1rem; }
+.modulo article { min-width: 0; }
+.modulo article > h2 { margin-bottom: 1rem; }
+.modulo p { line-height: 1.5; }
+.modulo dd { overflow-wrap: anywhere; }
+.modulo article dl { min-width: 0; }
+.modulo article dl dl { grid-template-columns: minmax(0, 1fr); }
+.modulo fieldset > legend + * { clear: both; }
+.modulo th { font-size: 0.75rem; }
+.modulo section > header { flex-wrap: wrap; }
+.modulo [class*='indicadorFormulario'] { font-size: 0.8125rem; }
+.modulo input:focus, .modulo textarea:focus { border-color: var(--color-primary); }
+.enlace { border: 0; background: none; color: var(--color-primary); font: inherit; font-size: 0.8125rem; min-height: 2.75rem; padding: 0.4rem 0.5rem; border-radius: var(--radius-small); cursor: pointer; overflow-wrap: anywhere; text-align: left; }
+.enlace:hover { background: var(--color-surface-muted); }
+.acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.accionesPolitica button { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; width: auto; min-width: 2.75rem; height: 2.75rem; padding: 0.4rem 0.65rem; border-radius: var(--radius-small); font-size: 0.8125rem; }
+.estado { display: inline-flex; padding: 0.4rem 0.75rem; border-radius: var(--radius-medium); font-size: 0.8125rem; font-weight: 600; background: var(--color-info-soft); color: var(--color-text); }
+.estado[data-estado='DISPONIBLE'], .estado[data-estado='ABIERTO'] { background: var(--color-success-soft); }
+.estado[data-estado='SUSPENDIDA'], .estado[data-estado='CIERRE_PENDIENTE'] { background: var(--color-warning-soft); }
+.estado[data-estado='INACTIVA'] { background: var(--color-danger-soft); }
+.aviso { padding: 1rem; border-radius: var(--radius-small); background: var(--color-surface-muted); color: var(--color-text); font-size: 0.875rem; line-height: 1.5; overflow-wrap: anywhere; margin: 0; }
+.identidad { display: grid; gap: 0.75rem; text-align: center; justify-items: center; padding: 1.25rem 0; clear: both; }
+.identidad > span { display: grid; place-items: center; width: 5rem; height: 5rem; background: var(--color-surface-muted); color: var(--color-primary); border-radius: var(--radius-medium); }
+.identidad svg { width: 2.5rem; height: 2.5rem; }
+.identidad p { font-size: 0.875rem; margin: 0; line-height: 1.5; }
+.contenido { display: grid; gap: 1rem; min-width: 0; }
+.resumen { max-height: calc(100dvh - 7rem); overflow-y: auto; }
+.completa { grid-column: 1 / -1; min-width: 0; }
+.completa dl { margin: 0; }
+.completa dd { overflow-wrap: anywhere; }
+.lineas { display: grid; gap: 0.75rem; }
+.linea { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; gap: 0.75rem; align-items: end; padding: 0.75rem; background: var(--color-background); border-radius: var(--radius-small); }
+.linea > button { margin-bottom: 0.15rem; }
+.check { composes: opcionCasilla from '../../shared/components/gestion-modulo/formulario-modulo.module.css'; }
+.modal { display: grid; gap: 1rem; }
+.modal fieldset { display: grid; gap: 1rem; padding: 0; border: 0; margin: 0; min-width: 0; }
+.monto { font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin: 0.5rem 0; }
+.modulo .generarComprobante { display: inline-flex; align-items: center; gap: .4rem; padding: .45rem .7rem; min-width: 0; min-height: 2.75rem; width: auto; height: auto; border-radius: var(--radius-small); font-size: .8125rem; }
+.generarComprobante img { width: 1.25rem; height: 1.25rem; object-fit: contain; flex: 0 0 auto; }
+.modulo .generarComprobante:disabled { opacity: .6; cursor: wait; transform: none; }
+@media (max-width: 56rem) { .resumen { max-height: none; overflow: visible; } }
+@media (max-width: 42rem) { .linea { grid-template-columns: minmax(0, 1fr); } .acciones { align-items: stretch; } }

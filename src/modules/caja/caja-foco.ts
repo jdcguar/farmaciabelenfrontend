@@ -1,0 +1,1 @@
+export function enfocarErrorCaja(formulario: HTMLFormElement | null) { requestAnimationFrame(() => { const campo = formulario?.querySelector<HTMLElement>('[aria-invalid="true"]'); campo?.focus(); campo?.scrollIntoView({ behavior: 'auto', block: 'center' }) }) }

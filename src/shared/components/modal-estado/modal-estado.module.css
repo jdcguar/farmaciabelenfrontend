@@ -1,0 +1,797 @@
+.fondo {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  padding: 1.25rem;
+  overflow-y: auto;
+  background: rgb(15 23 42 / 52%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  place-items: center;
+  animation: mostrarFondo 180ms ease-out;
+}
+
+.modal {
+  position: relative;
+  width: min(100%, 27rem);
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-large);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  animation: mostrarModal 220ms ease-out;
+}
+
+.cerrar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  place-items: center;
+}
+
+.modal.formulario { width: min(100%, 38rem); padding: 1.5rem; text-align: left; }
+.modal.formulario h2 { padding-right: 2.75rem; margin-top: 0; font-size: 1.25rem; }
+.formulario .mensaje { color: var(--color-text); }
+.formulario .acciones { justify-content: flex-end; }
+.formulario .secundario { color: var(--color-primary); border-color: var(--color-primary); }
+.formulario :is(button, input):focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+.cerrar:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+}
+
+.cerrar svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.animacionLottie,
+.ilustracion {
+  width: 7.5rem;
+  height: 7.5rem;
+  margin: 0 auto 1rem;
+}
+
+.animacionLottie canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.ilustracion {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+}
+
+.ilustracion svg {
+  position: relative;
+  z-index: 2;
+  width: 6rem;
+  height: 6rem;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.exito {
+  color: var(--color-success);
+}
+
+.error {
+  color: var(--color-danger-text);
+}
+
+.advertencia {
+  color: var(--color-warning);
+}
+
+.informacion {
+  color: var(--color-info);
+}
+
+.etiqueta {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: currentColor;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modal h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.mensaje {
+  margin-top: 0.75rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.mensaje p {
+  margin: 0;
+}
+
+.error h2,
+.error .mensaje {
+  color: var(--color-danger-text);
+}
+
+.acciones {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.principal,
+.secundario {
+  display: inline-flex;
+  min-width: 7.5rem;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-medium);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.principal {
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.principal:hover:not(:disabled) {
+  border-color: var(--color-primary-hover);
+  background: var(--color-primary-hover);
+}
+
+.principalPeligro {
+  border-color: var(--color-danger);
+  background: var(--color-danger);
+}
+
+.principalPeligro:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--color-danger) 82%, black);
+  background: color-mix(in srgb, var(--color-danger) 82%, black);
+}
+
+.secundario {
+  border: 1px solid var(--color-secondary);
+  background: var(--color-surface);
+  color: var(--color-secondary);
+}
+
+.secundario:hover:not(:disabled) {
+  background: var(--color-info-soft);
+}
+
+.principal:active:not(:disabled),
+.secundario:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.principal:disabled,
+.secundario:disabled,
+.cerrar:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.principal > svg,
+.secundario > svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+}
+
+@keyframes mostrarFondo {
+  from { opacity: 0; }
+}
+
+@keyframes mostrarModal {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem) scale(0.98);
+  }
+}
+
+@keyframes dibujarCheck {
+  from {
+    stroke-dashoffset: 1;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 30rem) {
+  .fondo {
+    align-items: end;
+    padding: 0.75rem;
+  }
+
+  .modal {
+    padding: 1.75rem 1.25rem 1.25rem;
+    border-radius: var(--radius-large) var(--radius-large) var(--radius-medium) var(--radius-medium);
+  }
+
+  .animacionLottie,
+  .ilustracion {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  .ilustracion svg {
+    width: 5.25rem;
+    height: 5.25rem;
+  }
+
+  .acciones {
+    flex-direction: column-reverse;
+  }
+
+  .principal,
+  .secundario {
+    width: 100%;
+    min-height: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fondo,
+  .modal {
+    animation: none;
+  }
+}
+
+.ilustracionExito {
+  color: var(--color-success);
+}
+
+.ilustracionExito .jeringa,
+.ilustracionExito .chequecito {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+}
+
+.jeringa {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ilustracionExito .chequecito {
+  opacity: 0;
+  transform: scale(0.8);
+  stroke-width: 4.5;
+}
+
+.cuerpoJeringa {
+  stroke-width: 4;
+}
+
+.contornoJeringa {
+  stroke: var(--color-text);
+  stroke-width: 4.5;
+}
+
+.liquidoJeringa {
+  fill: currentColor;
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transform: scaleY(0.82);
+}
+
+.estadoCargando .liquidoJeringa {
+  animation: llenarJeringa 1100ms ease-in-out infinite;
+}
+
+.circuloExito,
+.marcaExito {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.estadoExito .jeringa {
+  opacity: 0;
+  transform: scale(0.65);
+}
+
+.estadoExito .liquidoJeringa {
+  animation-play-state: paused;
+}
+
+.estadoExito .chequecito {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.estadoExito .circuloExito {
+  animation: dibujarCheck 520ms 160ms ease-out both;
+}
+
+.estadoExito .marcaExito {
+  animation: dibujarCheck 340ms 680ms ease-out both;
+}
+
+@keyframes llenarJeringa {
+  0%, 100% { transform: scaleY(0.12); }
+  70%, 85% { transform: scaleY(0.82); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ilustracionExito .jeringa,
+  .ilustracionExito .chequecito {
+    transition: none;
+  }
+
+  .liquidoJeringa,
+  .estadoCargando .liquidoJeringa,
+  .estadoExito .circuloExito,
+  .estadoExito .marcaExito {
+    animation: none;
+  }
+
+  .liquidoJeringa {
+    transform: scaleY(0.6);
+  }
+
+  .circuloExito,
+  .marcaExito {
+    stroke-dashoffset: 0;
+  }
+}
+
+.ilustracionError {
+  color: var(--color-danger);
+}
+
+.ilustracionError svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cruzMedicaError {
+  transform-box: view-box;
+  transform-origin: 60px 60px;
+  animation: balancearCruzError 4s ease-in-out infinite;
+}
+
+.baseCruzError {
+  fill: var(--color-surface);
+  stroke: none;
+}
+
+.rellenoCruzError {
+  fill: var(--color-danger);
+  stroke: none;
+}
+
+.contornoCruzError {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 3;
+}
+
+.insigniaError {
+  fill: var(--color-surface);
+  stroke: var(--color-text);
+  stroke-width: 3;
+}
+
+.marcaError {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 3.8;
+}
+
+.diagonalErrorUno {
+  animation: contraerErrorUno 4s ease-in-out infinite;
+}
+
+.diagonalErrorDos {
+  animation: contraerErrorDos 4s ease-in-out infinite;
+}
+
+.particulaError {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 2.6;
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation: girarParticulaError 1400ms linear infinite;
+}
+
+.particulaErrorDos {
+  animation-delay: -200ms;
+}
+
+.particulaErrorTres {
+  animation-delay: -400ms;
+}
+
+@keyframes balancearCruzError {
+  0%, 24%, 70%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  38%, 43% {
+    transform: rotate(-8deg) scale(1.08);
+  }
+
+  53%, 58% {
+    transform: rotate(8deg) scale(1.08);
+  }
+}
+
+@keyframes contraerErrorUno {
+  0%, 24%, 44%, 51%, 70%, 100% {
+    d: path("M82 78L94 90");
+  }
+
+  31%, 39%, 56%, 64% {
+    d: path("M82 78L84 80");
+  }
+}
+
+@keyframes contraerErrorDos {
+  0%, 24%, 44%, 51%, 70%, 100% {
+    d: path("M94 78L82 90");
+  }
+
+  31%, 39%, 56%, 64% {
+    d: path("M94 78L92 80");
+  }
+}
+
+@keyframes girarParticulaError {
+  to { transform: rotate(180deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cruzMedicaError,
+  .diagonalErrorUno,
+  .diagonalErrorDos,
+  .particulaError {
+    animation: none;
+    transform: none;
+  }
+}
+
+.ilustracionAdvertencia {
+  color: var(--color-warning);
+}
+
+.ilustracionAdvertencia svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ambulancia {
+  animation: avanzarAmbulancia 1600ms ease-in-out infinite;
+}
+
+.carroceriaAdvertencia,
+.ventanaAdvertencia,
+.neumaticoAdvertencia,
+.avisoAdvertencia {
+  fill: var(--color-surface);
+  stroke: var(--color-text);
+  stroke-width: 2.6;
+}
+
+.rellenoVentanaAdvertencia {
+  fill: var(--color-warning);
+  stroke: none;
+}
+
+.sirenaAdvertencia {
+  fill: var(--color-surface);
+  stroke: var(--color-text);
+  stroke-width: 2.6;
+  animation: parpadearSirena 1600ms step-end infinite;
+}
+
+.destellosSirena,
+.lineasVelocidad {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 2.4;
+}
+
+.destellosSirena {
+  animation: iluminarSirena 1600ms ease-in-out infinite;
+}
+
+.lineasVelocidad {
+  animation: mostrarVelocidad 1600ms ease-out infinite;
+}
+
+.ruedaAdvertencia {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation: girarRuedaAdvertencia 800ms linear infinite;
+}
+
+.reflejoRuedaAdvertencia {
+  fill: none;
+  stroke: var(--color-warning);
+  stroke-width: 3;
+  stroke-dasharray: 0.3 0.7;
+}
+
+.ejeRuedaAdvertencia {
+  fill: var(--color-text);
+  stroke: none;
+}
+
+.exclamacionAdvertencia {
+  fill: var(--color-text);
+  stroke: var(--color-text);
+  stroke-width: 3.2;
+  transform-box: view-box;
+  transform-origin: 30px 49px;
+  animation: balancearAvisoAdvertencia 1600ms ease-in-out infinite;
+}
+
+.particulaAdvertencia {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 2.4;
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation: girarParticulaAdvertencia 1400ms linear infinite;
+}
+
+.particulaAdvertenciaDos {
+  animation-delay: -350ms;
+}
+
+@keyframes avanzarAmbulancia {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(2px, -1px); }
+  50% { transform: translate(-2px, 0); }
+  75% { transform: translate(1px, -1px); }
+}
+
+@keyframes girarRuedaAdvertencia {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes parpadearSirena {
+  0%, 30%, 60%, 90%, 100% { fill: var(--color-surface); }
+  15%, 45%, 75% { fill: var(--color-warning); }
+}
+
+@keyframes iluminarSirena {
+  0%, 38%, 78%, 100% { opacity: 0; }
+  48%, 65% { opacity: 1; }
+}
+
+@keyframes mostrarVelocidad {
+  0%, 18%, 100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  32% {
+    opacity: 0;
+    transform: translateX(-5px);
+  }
+
+  38%, 82% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes balancearAvisoAdvertencia {
+  0%, 28%, 85%, 100% { transform: rotate(0deg); }
+  45% { transform: rotate(-8deg); }
+  65% { transform: rotate(8deg); }
+}
+
+@keyframes girarParticulaAdvertencia {
+  to { transform: rotate(180deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambulancia,
+  .sirenaAdvertencia,
+  .destellosSirena,
+  .lineasVelocidad,
+  .ruedaAdvertencia,
+  .exclamacionAdvertencia,
+  .particulaAdvertencia {
+    animation: none;
+    transform: none;
+  }
+
+  .sirenaAdvertencia {
+    fill: var(--color-warning);
+  }
+
+  .destellosSirena,
+  .lineasVelocidad {
+    opacity: 0;
+  }
+}
+
+.ilustracionInformacion {
+  color: var(--color-info);
+}
+
+.ilustracionInformacion svg {
+  width: 100%;
+  height: 100%;
+}
+
+.frascoInformacion {
+  transform-box: view-box;
+  transform-origin: 60px 76px;
+  animation: balancearFrascoInformacion 4s ease-in-out infinite;
+}
+
+.envaseInformacion,
+.contornoTapaInformacion,
+.contornoCapsulaInformacion {
+  fill: var(--color-surface);
+  stroke: var(--color-text);
+  stroke-width: 2.8;
+}
+
+.baseTapaInformacion,
+.baseCapsulaInformacion {
+  fill: var(--color-surface);
+  stroke: none;
+}
+
+.colorTapaInformacion,
+.colorCapsulaInformacion {
+  fill: var(--color-info);
+  stroke: none;
+}
+
+.colorTapaInformacion {
+  animation: deslizarColorTapa 1400ms ease-in-out infinite;
+}
+
+.contornoTapaInformacion,
+.contornoCapsulaInformacion {
+  fill: none;
+}
+
+.etiquetaFrascoInformacion {
+  fill: var(--color-info);
+  stroke: var(--color-text);
+  stroke-width: 2.8;
+}
+
+.signoAperturaInformacion {
+  fill: var(--color-text);
+  stroke: none;
+}
+
+.barraAperturaInformacion {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 4;
+  animation: pulsarSignoApertura 4s ease-in-out infinite;
+}
+
+.capsulaInformacion {
+  transform-box: view-box;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+  animation: balancearCapsulaInformacion 1600ms ease-in-out infinite;
+}
+
+.particulaInformacion {
+  fill: none;
+  stroke: var(--color-text);
+  stroke-width: 2.4;
+  transform-box: view-box;
+  transform-origin: 0 0;
+  animation: girarParticulaInformacion 1400ms linear infinite;
+}
+
+.particulaInformacionDos {
+  animation-delay: -350ms;
+}
+
+@keyframes balancearFrascoInformacion {
+  0%, 4%, 44%, 100% {
+    transform: rotate(0deg);
+  }
+
+  14%, 21% {
+    transform: rotate(-10deg);
+  }
+
+  30%, 34% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes pulsarSignoApertura {
+  0%, 4%, 44%, 100% {
+    d: path("M60 70v14");
+    stroke-width: 4;
+  }
+
+  14%, 21%, 30%, 34% {
+    d: path("M60 68v20");
+    stroke-width: 4.8;
+  }
+}
+
+@keyframes deslizarColorTapa {
+  0%, 100% { transform: translateX(-4px); }
+  50% { transform: translateX(6px); }
+}
+
+@keyframes balancearCapsulaInformacion {
+  0%, 100% { transform: rotate(45deg); }
+  35% { transform: rotate(55deg); }
+  70% { transform: rotate(38deg); }
+}
+
+@keyframes girarParticulaInformacion {
+  to { transform: rotate(180deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frascoInformacion,
+  .barraAperturaInformacion,
+  .colorTapaInformacion,
+  .capsulaInformacion,
+  .particulaInformacion {
+    animation: none;
+  }
+
+  .frascoInformacion,
+  .colorTapaInformacion,
+  .particulaInformacion {
+    transform: none;
+  }
+}

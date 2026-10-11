@@ -1,0 +1,69 @@
+.modulo { min-width: 0; }
+.comprobanteFila { min-width: 0; max-width: 16rem; }
+.accionesDocumento { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem; }
+.comprobanteFila > p { margin: .5rem 0 0; }
+.comprobanteFila [role='alert'] { margin-top: .5rem; white-space: normal; overflow-wrap: anywhere; }
+.modulo .generarComprobante { display: inline-flex; width: auto; height: auto; min-height: 2.75rem; align-items: center; gap: .4rem; padding: .45rem .7rem; border: 1px solid var(--color-border-strong); background: var(--color-surface); color: var(--color-primary); cursor: pointer; border-radius: var(--radius-small); font-size: .8125rem; white-space: nowrap; }
+.modulo .generarComprobante:hover { border-color: var(--color-primary); background: var(--color-surface-muted); }
+.generarComprobante img { width: 1.25rem; height: 1.25rem; object-fit: contain; }
+.modulo .generarComprobante:disabled { opacity: .6; cursor: wait; transform: none; }
+.tablaDocumentos { min-width: 0; max-width: 100%; }
+@media (min-width: 52.001rem) {
+  .tablaDocumentos :global(table) { min-width: 74rem; }
+  .tablaDocumentos[data-recurso='recepciones'] :global(table) { min-width: 84rem; }
+}
+.modulo button > svg { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
+.modulo button:focus-visible, .modulo a:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.modulo input, .modulo textarea { border-color: var(--color-text-muted); }
+.modulo input:focus, .modulo textarea:focus { border-color: var(--color-primary); }
+.modulo small { font-size: 0.75rem; color: var(--color-text); }
+.modulo dt { color: var(--color-text); }
+.resumenDetalle { max-height: calc(100dvh - 7rem); overflow-y: auto; }
+.resumenDetalle > div > span { font-size: 0.75rem; color: var(--color-text); }
+.intro { margin: 0.5rem 0 0; font-size: 0.8125rem; color: var(--color-text); line-height: 1.5; }
+.enlace { min-height: 2.75rem; padding: 0.35rem 0.5rem; border: 0; border-radius: var(--radius-small); background: none; color: var(--color-primary); cursor: pointer; font: inherit; font-size: 0.8125rem; text-align: left; overflow-wrap: anywhere; }
+.enlace:hover { background: var(--color-surface-muted); }
+.enlace:disabled { opacity: 0.65; cursor: default; }
+.enlace svg { width: 1rem; height: 1rem; vertical-align: middle; }
+.acciones { display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center; }
+.estado { display: inline-flex; padding: 0.35rem 0.7rem; border-radius: 999px; background: var(--color-info-soft); color: var(--color-text); font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
+.estado[data-estado='RECIBIDO'], .estado[data-estado='CERRADO'], .estado[data-estado='CONFIRMADA'] { background: var(--color-success-soft); }
+.estado[data-estado='SOLICITADO'], .estado[data-estado='PREPARADO'], .estado[data-estado='REGISTRADA'] { background: var(--color-warning-soft); }
+.estado[data-estado='RECHAZADO'], .estado[data-estado='CANCELADO'], .estado[data-estado='CANCELADA'] { background: var(--color-danger-soft); }
+.aviso { padding: 0.85rem 1rem; margin: 0; background: var(--color-surface-muted); border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); color: var(--color-text); font-size: 0.8125rem; line-height: 1.5; overflow-wrap: anywhere; }
+.error { color: var(--color-danger-text); }
+.identidad { display: grid; justify-items: center; gap: 0.75rem; padding: 1.25rem 0; text-align: center; clear: both; color: var(--color-text); }
+.identidad > span { display: grid; place-items: center; width: 5rem; height: 5rem; border-radius: var(--radius-medium); background: var(--color-surface-muted); color: var(--color-primary); }
+.identidad svg { width: 2.5rem; height: 2.5rem; }
+.identidad p { margin: 0; font-size: 0.8125rem; line-height: 1.5; }
+.lineas { display: grid; gap: 1rem; clear: both; }
+.seleccionLinea { composes: opcionCasilla from '../../shared/components/gestion-modulo/formulario-modulo.module.css'; margin: 0.65rem 0; font-size: 0.8125rem; font-weight: 600; }
+.linea > h3 { margin: 0; font-size: 0.875rem; overflow-wrap: anywhere; }
+.linea { padding: 1rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-background); }
+.cabeceraLinea { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.cabeceraLinea h3 { margin: 0; font-size: 0.875rem; }
+.contenido { min-width: 0; display: grid; gap: 1.25rem; }
+.tarjetaCompleta { min-width: 0; grid-column: 1 / -1; }
+.tarjetaCompleta > div { min-width: 0; }
+.tarjetaCompleta > h2 { margin-bottom: 1rem; }
+.accionesIncidencia { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin: 1rem 0; }
+.controlOperacion { display: grid; gap: 1rem; margin: 0; }
+.controlOperacion dt { color: var(--color-text-muted); font-size: 0.75rem; }
+.controlOperacion dd { margin: 0.35rem 0 0; color: var(--color-text); font-size: 0.875rem; overflow-wrap: anywhere; }
+.estado[data-estado='RESUELTA'] { background: var(--color-success-soft); }
+.estado[data-estado='ABIERTA'] { background: var(--color-warning-soft); }
+.detalleLineas { min-width: 0; display: grid; gap: 1rem; }
+.detalleLineas article { padding: 1rem; background: var(--color-background); border-radius: var(--radius-small); border: 1px solid var(--color-border-strong); }
+.detalleLineas h3 { margin: 0 0 0.65rem; font-size: 0.875rem; overflow-wrap: anywhere; }
+.detalleLineas p { font-size: 0.8125rem; line-height: 1.5; overflow-wrap: anywhere; }
+.detalleLineas dl { margin: 0; }
+.modal { display: grid; gap: 0.85rem; min-width: 0; }
+.modal fieldset { min-width: 0; padding: 0; margin: 0; border: 0; display: grid; gap: 0.85rem; }
+.modal label, .modal input, .modal textarea { font-size: 0.8125rem; }
+.modal input, .modal textarea { border-color: var(--color-text-muted); }
+.modal small { color: var(--color-text); font-size: 0.75rem; }
+.modulo .error, .modal .error { color: var(--color-danger-text); font-size: 0.75rem; }
+.modalLinea { padding: 0.75rem; background: var(--color-background); border-radius: var(--radius-small); }
+.modalLinea > p { margin: 0 0 0.5rem; color: var(--color-text); font-size: 0.8125rem; }
+@media (max-width: 56rem) { .resumenDetalle { max-height: none; overflow: visible; } }
+@media (max-width: 42rem) { .acciones { align-items: stretch; flex-direction: column; } }

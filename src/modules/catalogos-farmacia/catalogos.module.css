@@ -1,0 +1,49 @@
+.pagina { min-width: 0; }
+.pagina small, .pagina dt { font-size: 0.8125rem; }
+.pagina :global(button:focus-visible), .pagina :global(a:focus-visible) { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.pagina :global(input), .pagina :global(textarea) { border-color: var(--color-text-muted); }
+.aviso { margin: 0; padding: 0.85rem 1rem; border-radius: var(--radius-small); background: var(--color-info-soft); color: var(--color-text); font-size: 0.875rem; line-height: 1.5; }
+.errorTexto { color: var(--color-danger-text); }
+.error { color: var(--color-danger-text); }
+.estado { color: var(--color-text); }
+.referenciaControl { display: grid; min-width: 0; gap: 0.4rem; }
+.enlaceReferencia { border: 0; padding: 0; background: transparent; color: var(--color-primary); font: inherit; text-align: left; cursor: pointer; overflow-wrap: anywhere; }
+.enlaceReferencia:hover { text-decoration: underline; }
+.accionesHerramientas { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.botonHerramienta { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3rem; padding: 0.65rem 0.85rem; border: 1px solid var(--color-text-muted); border-radius: var(--radius-small); background: var(--color-surface); color: var(--color-primary); font: inherit; font-size: 0.8125rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.botonHerramienta:hover, .botonHerramienta[data-activo='true'] { background: var(--color-surface-muted); border-color: var(--color-primary); }
+.botonHerramienta svg { width: 1.125rem; height: 1.125rem; }
+.botonHerramienta:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.contadorFiltros { display: grid; place-items: center; min-width: 1.4rem; height: 1.4rem; padding-inline: 0.25rem; border-radius: 999px; background: var(--color-primary); color: var(--color-text-inverse); font-size: 0.75rem; }
+.panelHerramienta { display: grid; gap: 1rem; min-width: 0; }
+.ayudaHerramienta { color: var(--color-text); font-size: 0.8125rem; line-height: 1.5; }
+.camposHerramienta { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1rem; }
+.panelHerramienta label { font-size: 0.8125rem; }
+.panelHerramienta :is(input, button[role='combobox']) { border-color: var(--color-text-muted); }
+.resultadoPrecio { display: grid; gap: 0.5rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius-small); background: var(--color-surface-muted); color: var(--color-text); }
+.resultadoPrecio > strong { color: var(--color-primary); font-size: 1.5rem; }
+.campoCompleto { grid-column: 1 / -1; }
+.booleano { composes: opcionCasilla from '../../shared/components/gestion-modulo/formulario-modulo.module.css'; }
+.composicion { display: grid; gap: 1rem; }
+.filaComposicion { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; align-items: start; gap: 1rem; }
+.filaComposicion > button { align-self: center; min-height: 2.75rem; }
+.acciones { flex-wrap: wrap; }
+.acciones button { min-width: 2.75rem; min-height: 2.75rem; }
+.valor { white-space: nowrap; }
+.identidadProducto { display: flex; align-items: center; gap: 0.75rem; }
+.imagenProducto { display: grid; place-items: center; flex: 0 0 auto; width: 3.25rem; height: 3.25rem; overflow: hidden; border: 1px solid var(--color-border-strong); border-radius: var(--radius-small); background: var(--color-surface-muted); color: var(--color-primary); }
+.imagenProducto img { width: 100%; height: 100%; object-fit: contain; background: var(--color-surface); }
+.imagenProducto svg { width: 1.75rem; height: 1.75rem; }
+.imagenProductoDetalle img { object-fit: contain; background: var(--color-surface); }
+.pagina .formularioProducto fieldset { display: block; }
+.pagina .formularioProducto > fieldset { grid-row: 1; }
+.contenidoFormularioProducto { display: grid; grid-column: 2; gap: 1.25rem; min-width: 0; container-type: inline-size; }
+.formularioProducto nav { clear: both; }
+.formularioProducto nav > strong { color: var(--color-text-muted); font-size: 0.75rem; margin-bottom: 0.4rem; }
+.formularioProducto > div:last-child { min-width: 0; }
+.selectorImagenProducto .vistaPreviaProducto img { object-fit: contain; background: var(--color-surface); }
+.selectorImagenProducto label, .selectorImagenProducto button { min-height: 2.75rem; }
+.selectorImagenProducto:has(input:disabled) label { cursor: wait; opacity: 0.65; }
+.selectorImagenProducto input:focus + div label { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+@media (max-width: 56rem) { .pagina .formularioProducto > fieldset { grid-row: auto; } .contenidoFormularioProducto { grid-column: 1; } }
+@media (max-width: 42rem) { .filaComposicion { grid-template-columns: minmax(0, 1fr); } .acciones { flex-wrap: wrap; } }

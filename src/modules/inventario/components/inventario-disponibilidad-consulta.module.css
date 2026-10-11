@@ -1,0 +1,16 @@
+.resultado { display: grid; gap: 1.25rem; min-width: 0; }
+.cabeceraResultado { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.4fr); gap: 1.5rem; align-items: stretch; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border-strong); }
+.identidad { min-width: 0; }
+.identidad h3 { margin: 0; color: var(--color-text); font-size: 1.125rem; font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
+.identidad .datosConsulta { margin-top: 1rem; padding-top: 0; border-top: 0; gap: 1rem; }
+.datosConsulta dt, .metricas dt { font-size: 0.8125rem; line-height: 1.5; }
+.datosConsulta dd { font-size: 0.875rem; line-height: 1.5; }
+.disponible { display: grid; align-content: center; gap: 0.5rem; min-width: 0; padding: 1.25rem; border-radius: var(--radius-small); background: var(--color-surface-muted); }
+.disponible p { margin: 0; color: var(--color-text); font-size: 0.875rem; font-weight: 600; }
+.disponible strong { color: var(--color-primary); font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.2; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.disponible > span { color: var(--color-text); font-size: 0.8125rem; line-height: 1.5; overflow-wrap: anywhere; }
+.metricas dd { font-size: 1.125rem; font-weight: 600; line-height: 1.5; font-variant-numeric: tabular-nums; }
+.ayudaResultado { margin: 1rem 0 0; color: var(--color-text-muted); font-size: 0.8125rem; line-height: 1.5; }
+.ayudaRestricciones { margin: 1.25rem 0 0; padding: 0.875rem; border-radius: var(--radius-small); background: var(--color-surface-muted); color: var(--color-text); font-size: 0.8125rem; line-height: 1.5; }
+@media (max-width: 56rem) { .cabeceraResultado { grid-template-columns: minmax(0, 1fr); gap: 1rem; } }
+@media (max-width: 42rem) { .cabeceraResultado { margin-top: 1rem; padding-top: 1rem; } }
